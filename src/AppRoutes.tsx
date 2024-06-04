@@ -8,6 +8,7 @@ import { ProtectedRoute } from './features/auth/components';
 const AuthRoutes = lazy(() => import('./features/auth'));
 const ProductsRoutes = lazy(() => import('./features/products'));
 const AboutRoutes = lazy(() => import('./features/about'));
+const TestRoutes = lazy(() => import('./features/test'));
 
 export const AppRoutes = () => {
   return (
@@ -22,6 +23,7 @@ export const AppRoutes = () => {
         <Route path='/' element={<div>Dashboard</div>} />
         <Route path='/about' element={<AboutRoutes />} />
         <Route path='/products/*' element={<ProductsRoutes />} />
+        <Route path='/test' element={<TestRoutes />} />
       </Route>
       <Route element={<AuthLayout />}>
         <Route path='/auth/*' element={<AuthRoutes />} />
