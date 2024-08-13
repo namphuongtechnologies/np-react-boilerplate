@@ -23,6 +23,8 @@
   "dependencies": {
     "@namphuongtechnologi/axios": "latest",
     "@namphuongtechnologi/react": "latest",
+    "@namphuongtechnologi/ui": "latest",
+    "@namphuongtechnologi/utils": "latest",
     "@tanstack/react-query": "^5.40.0",
     "@tanstack/react-query-devtools": "^5.40.0",
     "react": "^18.3.1",
@@ -30,7 +32,8 @@
     "react-error-boundary": "^4.0.13",
     "react-helmet-async": "^2.0.5",
     "react-router-dom": "^6.23.1",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^20.14.1",
@@ -49,7 +52,7 @@
     "lint-staged": "^15.2.5",
     "postcss": "^8.4.38",
     "prettier": "^3.3.0",
-    "prettier-plugin-tailwindcss": "^0.5.14",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
     "vite": "^5.2.12"

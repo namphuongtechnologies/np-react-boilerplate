@@ -1,4 +1,8 @@
-import { createInfiniteQueryService, createQueryService } from '@namphuongtechnologi/react';
+import {
+  createInfiniteQueryService,
+  createMutationService,
+  createQueryService,
+} from '@namphuongtechnologi/react';
 import type { QueryClientConfig } from '@tanstack/react-query';
 import { keepPreviousData, QueryClient } from '@tanstack/react-query';
 
@@ -13,7 +17,22 @@ const queryClientConfigs: QueryClientConfig = {
   },
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const queryClient = new QueryClient(queryClientConfigs);
 export const QueryService = createQueryService(queryClient);
-export const InfiniteQueryService = createInfiniteQueryService(queryClient);
+export const InfiniteQueryService = createInfiniteQueryService(queryClient, {
+  initialPageParam: 1,
+  initialPageSize: 50,
+  getRecords: (data) => data?.data ?? [],
+  getTotalRecords: (data) => data?.totalRecord ?? 0,
+});
+
+export const MutationService = createMutationService(queryClient);
+
+declare module '@namphuongtechnologi/react' {
+  interface Tanstack_InfiniteQuery_Service<T> extends InfiniteRecord<T> {}
+}
+
+type InfiniteRecord<T> = {
+  data: T[];
+  totalRecord: number;
+};
