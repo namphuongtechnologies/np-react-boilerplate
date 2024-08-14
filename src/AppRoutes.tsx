@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { AuthLayout, MainLayout } from '~/components/layouts';
 import { NotFound } from './components/errors';
+import PermissionProvider from './components/permission';
 import { ProtectedRoute } from './features/auth/components';
 
 const Dashboard = lazy(() => import('./features/dashboard'));
@@ -18,7 +19,9 @@ export const AppRoutes = () => {
       <Route
         element={
           <ProtectedRoute>
-            <MainLayout />
+            <PermissionProvider>
+              <MainLayout />
+            </PermissionProvider>
           </ProtectedRoute>
         }
       >

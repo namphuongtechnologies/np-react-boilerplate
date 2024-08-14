@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontSize": 14,
+  // "editor.fontSize": 14,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
