@@ -28,5 +28,9 @@ const mockupPermissions: IUser_Permission[] = [
 export default function PermissionProvider({ children }: PropsWithChildren) {
   const [recordPermission] = useState(createRecordPermission(mockupPermissions, 'code'));
 
-  return <NPPermissionProvider permission={recordPermission}>{children}</NPPermissionProvider>;
+  return (
+    <NPPermissionProvider permission={recordPermission} notFoundPath='/not-found'>
+      {children}
+    </NPPermissionProvider>
+  );
 }
