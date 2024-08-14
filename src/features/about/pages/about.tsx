@@ -6,9 +6,7 @@ const About = () => {
   const havePermission = useHavePermission();
 
   const isHaveCreateAboutPermission = havePermission({
-    [User_Permission_Code['ABOUT_ROUTE']]: {
-      c: true,
-    },
+    [User_Permission_Code['ABOUT_ROUTE']]: ({ c }) => c,
   });
 
   return (

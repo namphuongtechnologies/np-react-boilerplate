@@ -10,14 +10,7 @@ const AboutRoutes = () => {
       <Route
         path=''
         element={
-          <Permission
-            isRoute
-            record={{
-              [User_Permission_Code['ABOUT_ROUTE']]: {
-                r: true,
-              },
-            }}
-          >
+          <Permission isRoute record={{ [User_Permission_Code['ABOUT_ROUTE']]: ({ r }) => r }}>
             <About />
           </Permission>
         }
