@@ -69,6 +69,8 @@ Start the server
 
 ## Folder Structure
 
+```bash
+
 ├── .husky
 │ └── pre-commit // config pre-commit
 ├── .vscode
@@ -148,3 +150,5 @@ Start the server
 ├── tsconfig.json // config for typescript
 ├── tsconfig.node.json
 └── vite.config.ts // config vite
+
+```
