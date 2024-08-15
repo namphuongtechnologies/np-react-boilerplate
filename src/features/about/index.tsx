@@ -1,8 +1,9 @@
 import { Permission } from '@namphuongtechnologi/react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { User_Permission_Code } from '~/config/permission';
 import About from './pages/about';
+import { NotFound } from '~/components/errors';
 
 const AboutRoutes = () => {
   return (
@@ -15,7 +16,7 @@ const AboutRoutes = () => {
           </Permission>
         }
       />
-      <Route path='*' element={<Navigate to='/not-found' />} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   );
 };
