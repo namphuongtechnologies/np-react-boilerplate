@@ -25,7 +25,7 @@ const mockupPermissions: IUser_Permission[] = [
   },
 ];
 
-export default function PermissionProvider({ children }: PropsWithChildren) {
+export function PermissionProvider({ children }: PropsWithChildren) {
   const [recordPermission] = useState(createRecordPermission(mockupPermissions, 'code'));
 
   return (

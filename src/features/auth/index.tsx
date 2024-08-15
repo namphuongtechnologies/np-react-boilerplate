@@ -1,5 +1,6 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
+import { NotFound } from '~/components/errors';
 
 const SignIn = lazy(() => import('./pages/sign-in'));
 const SignUp = lazy(() => import('./pages/sign-up'));
@@ -9,7 +10,7 @@ const AuthRoutes = () => {
     <Routes>
       <Route path='sign-in' element={<SignIn />} />
       <Route path='sign-up' element={<SignUp />} />
-      <Route path='*' element={<Navigate to='/not-found' />} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   );
 };
