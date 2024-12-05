@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuthToken } from '~/store/auth';
 
-export const AuthLayout = () => {
+const AuthLayout = () => {
   const isSignedIn = useAuthToken((store) => !!store.accessToken);
 
   if (isSignedIn) {
@@ -15,3 +15,5 @@ export const AuthLayout = () => {
     </Suspense>
   );
 };
+
+export default AuthLayout;

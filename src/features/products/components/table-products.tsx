@@ -1,3 +1,5 @@
-export const TableProducts = () => {
+const TableProducts = () => {
   return <div>TableProducts</div>;
 };
+
+export default TableProducts;

@@ -2,8 +2,8 @@ import { Permission } from '@namphuongtechnologi/react';
 import { Route, Routes } from 'react-router-dom';
 
 import { User_Permission_Code } from '~/config/permission';
-import About from './pages/about';
-import { NotFound } from '~/components/errors';
+import NotFound from '~/components/errors/not-found';
+import About from '~/features/about/pages/about';
 
 const AboutRoutes = () => {
   return (

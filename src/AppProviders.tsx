@@ -5,8 +5,10 @@ import { QueryClientProvider, QueryErrorResetBoundary } from '@tanstack/react-qu
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { HelmetProvider } from 'react-helmet-async';
 
-import { queryClient } from './config/query-client';
-import { FullscreenFallback, ErrorBoundaryFallback } from './components/fallbacks';
+import { queryClient } from '~/config/query-client';
+
+import FullscreenFallback from '~/components/fallbacks/fullscreen-fallback';
+import ErrorBoundaryFallback from '~/components/fallbacks/error-boundary-fallback';
 
 const AppProviders = ({ children }: PropsWithChildren) => {
   return (

@@ -35,11 +35,6 @@ export default function Dashboard() {
             <button>Sản phẩm</button>
           </Link>
         </li>
-        <li>
-          <Link to='/test'>
-            <button>Test</button>
-          </Link>
-        </li>
       </ul>
     </div>
   );

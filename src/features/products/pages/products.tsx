@@ -1,4 +1,4 @@
-import { TableProducts } from '../components';
+import TableProducts from '~/features/products/components/table-products';
 
 const Products = () => {
   return (

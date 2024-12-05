@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy } from 'react';
-import { NotFound } from '~/components/errors';
+
+import NotFound from '~/components/errors/not-found';
 
 const SignIn = lazy(() => import('./pages/sign-in'));
 const SignUp = lazy(() => import('./pages/sign-up'));

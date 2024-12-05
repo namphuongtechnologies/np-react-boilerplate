@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 
 import { useAuthToken } from '~/store/auth';
 
-export const ProtectedRoute = ({ children }: PropsWithChildren) => {
+const ProtectedRoute = ({ children }: PropsWithChildren) => {
   const isSignedIn = useAuthToken((store) => !!store.accessToken);
 
   if (!isSignedIn) {
@@ -12,3 +12,5 @@ export const ProtectedRoute = ({ children }: PropsWithChildren) => {
 
   return children;
 };
+
+export default ProtectedRoute;

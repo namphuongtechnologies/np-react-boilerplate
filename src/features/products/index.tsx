@@ -1,11 +1,12 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { NotFound } from '~/components/errors';
 
-const Products = lazy(() => import('./pages/products'));
-const ProductCreate = lazy(() => import('./pages/product-create'));
-const ProductEdit = lazy(() => import('./pages/product-edit'));
-const ProductDetail = lazy(() => import('./pages/product-detail'));
+import NotFound from '~/components/errors/not-found';
+
+const Products = lazy(() => import('~/features/products/pages/products'));
+const ProductCreate = lazy(() => import('~/features/products/pages/product-create'));
+const ProductEdit = lazy(() => import('~/features/products/pages/product-edit'));
+const ProductDetail = lazy(() => import('~/features/products/pages/product-detail'));
 
 const ProductsRoutes = () => {
   return (
