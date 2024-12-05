@@ -51,3 +51,5 @@ export const Container = (props: Props) => {
     </div>
   );
 };
+
+export default Container;

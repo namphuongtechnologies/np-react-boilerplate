@@ -1,11 +1,11 @@
 import { Input, Space } from 'antd';
 import debounce from 'lodash/debounce';
-import { NumberParam, StringParam, useQueryParams, withDefault } from 'use-query-params';
+import { withDefault, StringParam, useQueryParams, NumberParam } from 'use-query-params';
 
 import { searchParamKeys } from '~/constants/searchParamKeys';
-import CreateActivityModal from '~/features/role-control/activities/components/create-activity-modal';
+import CreateRoleModal from '~/features/role-control/roles/components/create-role-modal';
 
-const ActivityActions = () => {
+const RoleActions = () => {
   const [searchParams, setSearchParams] = useQueryParams({
     [searchParamKeys.PAGE]: withDefault(NumberParam, 1),
     [searchParamKeys.KEYWORD]: withDefault(StringParam, ''),
@@ -13,7 +13,7 @@ const ActivityActions = () => {
 
   return (
     <Space>
-      <CreateActivityModal />
+      <CreateRoleModal />
       <Input
         size='large'
         className='max-w-[12rem]'
@@ -30,4 +30,4 @@ const ActivityActions = () => {
   );
 };
 
-export default ActivityActions;
+export default RoleActions;

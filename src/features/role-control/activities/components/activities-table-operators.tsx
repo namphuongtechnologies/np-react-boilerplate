@@ -1,9 +1,9 @@
 import { Space } from 'antd';
 
-import type { Activity } from '../types/Activity';
+import type { Activity } from '~/features/role-control/activities/types/Activity';
 
-import DeleteActivityConfirmation from './delete-activity-confirmation';
-import UpdateActivityModal from './update-activity-modal';
+import DeleteActivityConfirmation from '~/features/role-control/activities/components/delete-activity-confirmation';
+import UpdateActivityModal from '~/features/role-control/activities/components/update-activity-modal';
 
 const ActivitiesTableOperators = ({ activity }: { activity: Activity }) => {
   return (

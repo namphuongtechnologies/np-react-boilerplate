@@ -1,14 +1,14 @@
 import { useQueryParams, NumberParam, StringParam, withDefault } from 'use-query-params';
 
-import { useActivities } from '../hooks/activities/queries/use-activities';
-
-import ActivityActions from '../components/activity-actions';
-import ActivitiesTable from '../components/activities-table';
-import ErrorPage from '~/components/errors/error-page';
+import { useActivities } from '~/features/role-control/activities/hooks/queries/use-activities';
 import { searchParamKeys } from '~/constants/searchParamKeys';
-import { Container } from '~/components/ui/container';
 
-const Permissions = () => {
+import ActivityActions from '~/features/role-control/activities/components/activity-actions';
+import ActivitiesTable from '~/features/role-control/activities/components/activities-table';
+import ErrorPage from '~/components/errors/error-page';
+import Container from '~/components/ui/container';
+
+const Activities = () => {
   const [searchParams, setSearchParams] = useQueryParams({
     pageIndex: withDefault(NumberParam, 1),
     pageSize: withDefault(NumberParam, 10),
@@ -40,4 +40,4 @@ const Permissions = () => {
   );
 };
 
-export default Permissions;
+export default Activities;

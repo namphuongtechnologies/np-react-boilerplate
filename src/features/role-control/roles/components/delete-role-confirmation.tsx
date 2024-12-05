@@ -2,18 +2,18 @@ import { DeleteOutlined } from '@ant-design/icons';
 import { App, Button, Popconfirm, Tooltip } from 'antd';
 
 import { ServiceMessage } from '~/utils/serviceMessage';
-import { useDeleteActivity } from '~/features/role-control/activities/hooks/mutations/use-delete-activity';
-import type { Activity } from '~/features/role-control/activities/types/Activity';
+import { useDeleteRole } from '~/features/role-control/roles/hooks/mutations/use-delete-role';
+import type { Role } from '~/features/role-control/roles/types/Role';
 
-const DeleteActivityConfirmation = (props: { activity?: Activity }) => {
-  const { activity } = props;
+const DeleteRoleConfirmation = (props: { role?: Role }) => {
+  const { role } = props;
 
   const { message } = App.useApp();
-  const { mutate: deleteActivity, invalidate } = useDeleteActivity();
+  const { mutate: deleteRole, invalidate } = useDeleteRole();
 
   const onConfirm = (id?: string) => {
     if (!id) return;
-    deleteActivity(id, {
+    deleteRole(id, {
       onSuccess: (response) => {
         invalidate();
         message.success(ServiceMessage.success(response).message);
@@ -25,11 +25,11 @@ const DeleteActivityConfirmation = (props: { activity?: Activity }) => {
   };
   return (
     <Popconfirm
-      title='Xóa quyền'
-      description='Bạn chắc chắn muốn xóa quyền này?'
-      onConfirm={() => onConfirm(activity?.Id)}
+      title='Xóa nhóm quyền'
+      description='Bạn chắc chắn muốn xóa nhóm quyền này?'
+      onConfirm={() => onConfirm(role?.Id)}
     >
-      <Tooltip title='Xóa quyền'>
+      <Tooltip title='Xóa nhóm quyền'>
         <Button
           danger
           size='small'
@@ -41,4 +41,4 @@ const DeleteActivityConfirmation = (props: { activity?: Activity }) => {
   );
 };
 
-export default DeleteActivityConfirmation;
+export default DeleteRoleConfirmation;

@@ -1,8 +1,8 @@
 import { EditOutlined } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
 
-import type { Activity } from '../types/Activity';
-import CreateActivityForm from './create-activity-form';
+import type { Activity } from '~/features/role-control/activities/types/Activity';
+import CreateActivityForm from '~/features/role-control/activities/components/create-activity-form';
 import Modal from '~/components/modals/modal';
 
 interface Props {

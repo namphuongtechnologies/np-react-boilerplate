@@ -1,9 +1,10 @@
 import { App, Button, Col, Flex, Form, Input, Row, Spin } from 'antd';
 
-import type { Activity } from '../types/Activity';
+import type { Activity } from '~/features/role-control/activities/types/Activity';
 import { ServiceMessage } from '~/utils/serviceMessage';
-import { useCreateActivity } from '../hooks/activities/mutations/use-create-activity';
-import { useUpdateActivity } from '../hooks/activities/mutations/use-update-activity';
+
+import { useCreateActivity } from '~/features/role-control/activities/hooks/mutations/use-create-activity';
+import { useUpdateActivity } from '~/features/role-control/activities/hooks/mutations/use-update-activity';
 
 interface Props {
   onCloseModal?: () => void;

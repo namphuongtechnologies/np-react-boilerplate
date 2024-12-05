@@ -1,7 +1,7 @@
 import { Tooltip, Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
-import CreateActivityForm from './create-activity-form';
+import CreateActivityForm from '~/features/role-control/activities/components/create-activity-form';
 import Modal from '~/components/modals/modal';
 
 const CreateActivityModal = () => {

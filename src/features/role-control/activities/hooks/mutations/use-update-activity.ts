@@ -1,7 +1,8 @@
 import { useIsMutating, useMutation } from '@tanstack/react-query';
+
 import { queryClient } from '~/config/query-client';
-import { activitiesApi } from '../../../api/activities-api';
-import { activitiesKeys } from '../../../constants/activitiesKeys';
+import { activitiesApi } from '~/features/role-control/activities/api/activities-api';
+import { activitiesKeys } from '~/features/role-control/activities/constants/activitiesKeys';
 
 type UpdateActivityParams = Parameters<typeof activitiesApi.update>;
 type Variables = UpdateActivityParams[0];

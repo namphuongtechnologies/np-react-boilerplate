@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { activitiesKeys } from '../../../constants/activitiesKeys';
-import { activitiesApi } from '../../../api/activities-api';
+
+import { activitiesKeys } from '~/features/role-control/activities/constants/activitiesKeys';
+import { activitiesApi } from '~/features/role-control/activities/api/activities-api';
 
 export const useActivities = () => {
   return useQuery({

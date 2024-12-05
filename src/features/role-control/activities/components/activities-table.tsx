@@ -1,7 +1,7 @@
 import { Table, type TableProps } from 'antd';
 import dayjs from 'dayjs';
 
-import ActivitiesTableOperators from './activities-table-operators';
+import ActivitiesTableOperators from '~/features/role-control/activities/components/activities-table-operators';
 
 import { DateFormats } from '~/constants/dateFormats';
 import type { Activity } from '~/features/role-control/activities/types/Activity';
