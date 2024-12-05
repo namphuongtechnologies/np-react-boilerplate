@@ -12,8 +12,9 @@ const Dashboard = lazy(() => import('./features/dashboard'));
 const AuthRoutes = lazy(() => import('./features/auth'));
 const ProductsRoutes = lazy(() => import('./features/products'));
 const AboutRoutes = lazy(() => import('./features/about'));
+const RoleControlRoutes = lazy(() => import('./features/role-control'));
 
-export const AppRoutes = () => {
+const AppRoutes = () => {
   return (
     <Routes>
       <Route path='/' element={<Dashboard />} />
@@ -28,6 +29,7 @@ export const AppRoutes = () => {
       >
         <Route path='/about' element={<AboutRoutes />} />
         <Route path='/products/*' element={<ProductsRoutes />} />
+        <Route path='/role-control/*' element={<RoleControlRoutes />} />
       </Route>
       <Route element={<AuthLayout />}>
         <Route path='/auth/*' element={<AuthRoutes />} />
@@ -36,3 +38,5 @@ export const AppRoutes = () => {
     </Routes>
   );
 };
+
+export default AppRoutes;

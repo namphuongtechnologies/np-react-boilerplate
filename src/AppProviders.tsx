@@ -4,8 +4,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClientProvider, QueryErrorResetBoundary } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { HelmetProvider } from 'react-helmet-async';
+import { ConfigProvider, App } from 'antd';
 
 import { queryClient } from '~/config/query-client';
+import { theme } from '~/config/ant-design';
 
 import FullscreenFallback from '~/components/fallbacks/fullscreen-fallback';
 import ErrorBoundaryFallback from '~/components/fallbacks/error-boundary-fallback';
@@ -13,18 +15,22 @@ import ErrorBoundaryFallback from '~/components/fallbacks/error-boundary-fallbac
 const AppProviders = ({ children }: PropsWithChildren) => {
   return (
     <Suspense fallback={<FullscreenFallback />}>
-      <QueryErrorResetBoundary>
-        {({ reset }) => (
-          <ErrorBoundary onReset={reset} FallbackComponent={ErrorBoundaryFallback}>
-            <HelmetProvider>
-              <QueryClientProvider client={queryClient}>
-                <Router>{children}</Router>
-                <ReactQueryDevtools initialIsOpen={false} position='left' />
-              </QueryClientProvider>
-            </HelmetProvider>
-          </ErrorBoundary>
-        )}
-      </QueryErrorResetBoundary>
+      <ConfigProvider theme={theme}>
+        <App>
+          <QueryErrorResetBoundary>
+            {({ reset }) => (
+              <ErrorBoundary onReset={reset} FallbackComponent={ErrorBoundaryFallback}>
+                <HelmetProvider>
+                  <QueryClientProvider client={queryClient}>
+                    <Router>{children}</Router>
+                    <ReactQueryDevtools initialIsOpen={false} position='left' />
+                  </QueryClientProvider>
+                </HelmetProvider>
+              </ErrorBoundary>
+            )}
+          </QueryErrorResetBoundary>
+        </App>
+      </ConfigProvider>
     </Suspense>
   );
 };
