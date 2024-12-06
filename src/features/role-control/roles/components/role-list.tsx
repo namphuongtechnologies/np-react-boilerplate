@@ -16,7 +16,7 @@ interface Props extends TableProps<Role> {
   showOperators?: boolean;
 }
 
-export const RoleList = memo((props: Props) => {
+const RoleList = memo((props: Props) => {
   const { showOperators = true, ...tableProps } = props;
 
   const navigate = useNavigate();
@@ -107,3 +107,4 @@ export const RoleList = memo((props: Props) => {
     />
   );
 });
+export default RoleList;

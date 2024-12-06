@@ -1,5 +1,6 @@
-import { Container } from '../components/container';
-import { RoleList, RoleActions } from '../components/roles';
+import Container from '~/components/ui/container';
+import RoleActions from '~/features/role-control/roles/components/role-actions';
+import RoleList from '~/features/role-control/roles/components/role-list';
 
 const RolesPage = () => {
   return (

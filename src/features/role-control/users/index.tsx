@@ -3,18 +3,14 @@ import { Route, Routes } from 'react-router-dom';
 
 import NotFound from '~/components/errors/not-found';
 
-const Products = lazy(() => import('~/features/products/pages/products'));
-const ProductCreate = lazy(() => import('~/features/products/pages/product-create'));
-const ProductEdit = lazy(() => import('~/features/products/pages/product-edit'));
-const ProductDetail = lazy(() => import('~/features/products/pages/product-detail'));
+const Users = lazy(() => import('~/features/role-control/users/pages/users'));
+const User = lazy(() => import('~/features/role-control/users/pages/user'));
 
 const UsersRoutes = () => {
   return (
     <Routes>
-      <Route index element={<Products />} />
-      <Route path='create' element={<ProductCreate />} />
-      <Route path=':id' element={<ProductDetail />} />
-      <Route path=':id/edit' element={<ProductEdit />} />
+      <Route index element={<Users />} />
+      <Route path=':id' element={<User />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   );

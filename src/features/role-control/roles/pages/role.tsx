@@ -2,14 +2,18 @@ import { useParams } from 'react-router-dom';
 import { App, Button, Form, Space } from 'antd';
 import { useEffect, useMemo, useState } from 'react';
 
-import { RoleActivityList } from '../components/activities';
-import { AddActivitiesModal, DeleteRoleActivitiesConfirmation } from '../components/roles';
-import { useRoleActivities, useUpdateRoleActivities } from '../hooks/roles';
-import type { Activity, RoleActivity } from '../types';
-import { useSelectedRowKeys } from '../hooks/use-selected-row-keys';
-import { Container } from '../components/container';
-import { ErrorPage } from '../components/error-page';
-import { ServiceMessage } from '../utils/serviceMessage';
+import { useSelectedRowKeys } from '~/hooks/useSelectedRowKeys';
+import { ServiceMessage } from '~/utils/serviceMessage';
+import { useUpdateRoleActivities } from '~/features/role-control/roles/hooks/mutations/use-update-role-activities';
+import { useRoleActivities } from '~/features/role-control/roles/hooks/queries/use-role-activities';
+import type { Activity } from '~/features/role-control/activities/types/Activity';
+import type { RoleActivity } from '~/features/role-control/roles/types/RoleActivity';
+
+import Container from '~/components/ui/container';
+import ErrorPage from '~/components/errors/error-page';
+import AddActivitiesModal from '~/features/role-control/roles/components/add-activities-modal';
+import DeleteRoleActivitiesConfirmation from '~/features/role-control/roles/components/delete-role-activities-confirmation';
+import RoleActivityList from '~/features/role-control/activities/components/role-activity-list';
 
 const Role = () => {
   const [editing, setEditing] = useState(false);

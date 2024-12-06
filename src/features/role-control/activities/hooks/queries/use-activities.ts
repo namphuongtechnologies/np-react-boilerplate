@@ -2,11 +2,16 @@ import { useQuery } from '@tanstack/react-query';
 
 import { activitiesKeys } from '~/features/role-control/activities/constants/activitiesKeys';
 import { activitiesApi } from '~/features/role-control/activities/api/activities-api';
+import type { Activity } from '../../types/Activity';
 
 export const useActivities = () => {
-  return useQuery({
+  const query = useQuery({
     queryKey: activitiesKeys.list(),
     queryFn: () => activitiesApi.getActivities(),
     select: (data) => data.data,
   });
+
+  const activities: Activity[] = [];
+
+  return { ...query, activities };
 };
